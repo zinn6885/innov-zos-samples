@@ -1,5 +1,6 @@
-           05  FT-Team-Name          pic x(20).
-           05  FT-Player-Name        pic x(20).
+           05  FD-KSDS-Key.
+              10  FT-Team-Name          pic x(20).
+              10  FT-Player-Name        pic x(20).
            05  FT-Games              pic 9(05).
            05  FT-Attempts           pic 9(05).
            05  FT-Completed          pic 9(05).

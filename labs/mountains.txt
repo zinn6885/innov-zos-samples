@@ -1,20 +1,20 @@
-AKDenali                        61905
-AKMount Saint Elias             54890
-AKMount Foraker                 53040
-AKMount Bona                    50440
-AKMount Blackburn               49960
-AKMount Sanford                 49490
-AKMount Fairweather             46710
-AKMount Hubbard                 45570
-AKMount Bear                    45200
-AKMount Hunter                  44420
-CAMount Whitney                 44210
-AKMount Alverstone              44200
-AKUniversity Peak               44100
-COMount Elbert                  44012
-COMount Massive                 43980
-COMount Harvard                 43956
-WAMount Rainier                 43940
-CAMount Williamson              43830
 COBianca Peak                   43740
+AKDenali                        61905
 COLa Plata Peak                 43720
+AKMount Alverstone              44200
+AKMount Bear                    45200
+AKMount Blackburn               49960
+AKMount Bona                    50440
+COMount Elbert                  44012
+AKMount Fairweather             46710
+AKMount Foraker                 53040
+COMount Harvard                 43956
+AKMount Hubbard                 45570
+AKMount Hunter                  44420
+COMount Massive                 43980
+WAMount Rainier                 43940
+AKMount Saint Elias             54890
+AKMount Sanford                 49490
+CAMount Whitney                 44210
+CAMount Williamson              43830
+AKUniversity Peak               44100

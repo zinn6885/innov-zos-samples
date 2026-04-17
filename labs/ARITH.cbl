@@ -17,9 +17,9 @@
            05  b                 pic s9(7) packed-decimal.
            05  c                 pic s9(7) packed-decimal.
            05  Sale-Amount       pic s9(5)v99 packed-decimal.
-           05  Tax-Rate          pic sv9(4) packed-decimal.
+           05  Tax-Rate          pic s9v9(4) packed-decimal.
            05  Total-Amount      pic s9(5)v99 packed-decimal.
-      *    05  Display-Amount    pic ???????.
+           05  Display-Amount    pic $$,$$$,$$9.99.
 
        Procedure Division.
 
@@ -27,13 +27,17 @@
       * field Value-1 and put the result in Field-Length.
 
       *    <your code goes here>
-           display "length " Field-Length
+           compute Field-Length =
+               function length(Value-1)
+           end-compute 
+      *    move function length(Value-1) to Field-Length
+           display "length: " Field-Length
 
       * Display just the sign of field Value-1.
       * Use reference modification to extract the sign character.
 
            move 43546 to Value-1
-      *    display "sign is " Value-1(?:1)  <== FIX THIS
+           display "sign is " Value-1(1:1)
 
       * Complete the code in paragraph Numeric-or-Not to avoid
       * Data Exception (S0C7) abends.
@@ -56,10 +60,19 @@
            compute a =
                ((b * 4) + c) - 2
            end-compute
-           display "Result using COMPUTE is " a
+           display "Result using COMPUTE is: " a
 
       * <your code goes here>
-           display "Result is " a
+           multiply 4 by b 
+               giving a 
+           end-multiply
+           add c to a 
+               giving a 
+           end-add
+           subtract 2 from a 
+               giving a 
+           end-subtract
+           display "Result is: " a
 
       * Determine whether Value-2 is an even multiple of 4 using
       * the DIVIDE statement instead of FUNCTION MOD.
@@ -68,6 +81,10 @@
            compute Value-1 =
                function mod(Value-2 4)
            end-compute
+           divide Value-2 by 4 
+               giving Value-1 
+               remainder Value-1 
+           end-divide
            if Value-1 equal zero
                display "Value-2 (" Value-2 ")"
                        " is an even multiple of 4"
@@ -89,12 +106,17 @@
            move 45856.92 to Sale-Amount
            move .0225 to Tax-Rate
       * <your code goes here>
+           add 1 to Tax-Rate
+           end-add
+           multiply Sale-Amount by Tax-Rate
+               giving Display-Amount
+           end-multiply
            display "Total-Amount is " Display-Amount
 
            goback
            .
        Numeric-or-Not.
-           if ????          <== FIX THIS
+           if Value-2 is numeric        
                display "Field Value-2 is numeric"
            else
                display "Field Value-2 is not numeric"
